@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>
+
+    </title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+
+<body>
+    <h1>Vue 2 Basics</h1>
+    <div id="app">
+        <h2>{{ titleX }}</h2>
+        <p>{{ greet('not morning') }}</p>
+        <a v-bind:href="url">Youtube lol</a>
+        <div v-bind:class="classes">Class from instance</div>
+        <input type="text" :value="name">
+        <p>
+            I earn {{ wage }} dollars yo.
+            <button v-on:click=changeWage(1)>Increase wage by $1</button>
+            <button v-on:click=changeWage(-1)>Decrease wage by $1</button>
+            <button v-on:dblclick=changeWage(2)>Increase wage by $2</button>
+            <button v-on:dblclick=changeWage(-2)>Decrease wage by $2</button>
+            <br>
+            <button @click="logEvent">Log event info</button>
+        </p>
+        <div class="canvas" @mousemove="logCoords">
+            <p style="text-align:center ;color:white">{{ coords.x }} , {{ coords.y }}</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
